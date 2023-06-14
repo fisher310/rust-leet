@@ -5,6 +5,8 @@ mod p3;
 mod p4;
 mod p5;
 mod p9;
+mod p19;
+mod p21;
 mod p94;
 mod p100;
 mod p101;
