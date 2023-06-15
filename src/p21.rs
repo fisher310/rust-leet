@@ -6,57 +6,30 @@ impl Solution {
         list1: Option<Box<ListNode>>,
         list2: Option<Box<ListNode>>,
     ) -> Option<Box<ListNode>> {
-        let mut dummy = Box::new(ListNode::new(0));
-        let mut ll1 = Box::new(ListNode {
-            val: 0,
-            next: list1,
-        });
-        let mut ll2 = Box::new(ListNode {
-            val: 0,
-            next: list2,
-        });
-        let mut current = &mut dummy as *mut Box<ListNode>;
-        let mut ll1 = &mut ll1 as *mut Box<ListNode>;
-        let mut ll2 = &mut ll2 as *mut Box<ListNode>;
-        unsafe {
-            loop {
-                match (&(*ll1).next, &(*ll2).next) {
-                    (Some(x), Some(y)) => {
-                        if x.val < y.val {
-                            // (*current).next = Some(Box::new(ListNode::new(x.val)));
-                            // ll1 = (*ll1).next.as_mut().unwrap();
-                            (*current).next = (*ll1).next.take();
-                            ll1 = (*current).next.as_mut().unwrap();
-                        } else {
-                            // (*current).next = Some(Box::new(ListNode::new(y.val)));
-                            // ll2 = (*ll2).next.as_mut().unwrap();
-                            (*current).next = (*ll2).next.take();
-                            ll2 = (*current).next.as_mut().unwrap();
-                        }
-                        current = (*current).next.as_mut().unwrap();
+        let mut head = None;
+        let (mut list1, mut list2) = (list1, list2);
+        let mut current = &mut head;
+        loop {
+            match (list1, list2) {
+                (Some(mut a), Some(mut b)) => {
+                    if a.val < b.val {
+                        list1 = a.next.take();
+                        list2 = Some(b);
+                        current = &mut current.insert(a).next;
+                    } else {
+                        list1 = Some(a);
+                        list2 = b.next.take();
+                        current = &mut current.insert(b).next;
                     }
-                    (Some(x), None) => {
-                        // (*current).next = Some(Box::new(ListNode::new(x.val)));
-                        // ll1 = (*ll1).next.as_mut().unwrap();
-                        (*current).next = (*ll1).next.take();
-                        ll1 = (*current).next.as_mut().unwrap();
-                        current = (*current).next.as_mut().unwrap();
-                    }
-                    (None, Some(x)) => {
-                        // (*current).next = Some(Box::new(ListNode::new(x.val)));
-                        // ll2 = (*ll2).next.as_mut().unwrap();
-                        (*current).next = (*ll2).next.take();
-                        ll2 = (*current).next.as_mut().unwrap();
-                        current = (*current).next.as_mut().unwrap();
-                    }
-                    (None, None) => {
-                        break;
-                    }
+                }
+                (x, y) => {
+                    *current = x.or(y);
+                    break;
                 }
             }
         }
 
-        dummy.next
+        head
     }
 }
 

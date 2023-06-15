@@ -46,7 +46,7 @@ pub fn create_list(list: &[i32]) -> Option<Box<ListNode>> {
     }
 }
 
-fn print_list(list: Option<Box<ListNode>>) {
+pub fn print_list(list: Option<Box<ListNode>>) {
     let s = print_help(list);
     let s = s.trim_end_matches("\\s,");
     println!("[{}]", s);
