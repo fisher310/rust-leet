@@ -15,6 +15,7 @@ impl ListNode {
     }
 }
 
+
 impl Display for ListNode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut t = &self.next;
