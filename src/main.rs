@@ -21,8 +21,15 @@ mod p110;
 mod p111;
 mod p112;
 mod p206;
+mod p234;
 mod p495;
+mod p766;
 mod p2432;
+mod solutions;
+mod all_your_base;
+mod allergies;
+mod binary_search;
+mod dot_dsl;
 fn main() {
     println!("Hello, world!");
 }
