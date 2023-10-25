@@ -15,7 +15,6 @@ impl ListNode {
     }
 }
 
-
 impl Display for ListNode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut t = &self.next;
@@ -116,6 +115,18 @@ pub fn create_tree(arr: &[Option<i32>]) -> Option<Rc<RefCell<TreeNode>>> {
     }
 
     root
+}
+
+pub fn create_vec_from_arr<T>(a: &[&[T]]) -> Vec<Vec<T>>
+where
+    T: Clone,
+{
+    let mut ans = vec![];
+    for v in a {
+        let x = Vec::from(*v);
+        ans.push(x);
+    }
+    ans
 }
 
 mod tests {
