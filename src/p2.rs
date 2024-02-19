@@ -42,8 +42,8 @@ mod tests {
 
     #[test]
     fn test1() {
-        let l1 = common::create_list(vec![2,4,3].as_slice());
-        let l2 = common::create_list(vec![5,6,4].as_slice());
+        let l1 = common::create_list(vec![2, 4, 3].as_slice());
+        let l2 = common::create_list(vec![5, 6, 4].as_slice());
         let res = Solution::add_two_numbers(l1, l2);
         println!("{:?}", res)
     }

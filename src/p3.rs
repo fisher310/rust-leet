@@ -4,7 +4,7 @@ struct Solution;
 
 impl Solution {
     pub fn length_of_longest_substring(s: String) -> i32 {
-        let mut cache : HashSet<char> = HashSet::new();
+        let mut cache: HashSet<char> = HashSet::new();
         let ch = s.chars().collect::<Vec<_>>();
 
         let mut i = 0;
@@ -15,13 +15,12 @@ impl Solution {
             let c = ch[j];
             if !cache.contains(&c) {
                 cache.insert(c);
-                j+=1;
-                ans = if ans < j - i {j - i} else {ans};
+                j += 1;
+                ans = if ans < j - i { j - i } else { ans };
             } else {
                 cache.remove(&ch[i]);
-                i+=1;
+                i += 1;
             }
-            
         }
         ans as i32
     }
@@ -48,6 +47,5 @@ mod tests {
         assert_eq!(3, n, "adb");
         let n = Solution::length_of_longest_substring("cdd".to_string());
         assert_eq!(2, n, "cdd");
-        
     }
 }

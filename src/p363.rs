@@ -79,7 +79,7 @@ mod tests {
         union hello_int {
             a: u32,
             b: f32,
-            c: f64
+            c: f64,
         }
 
         let x = hello_int { a: 11112128 };

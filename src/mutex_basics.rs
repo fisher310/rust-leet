@@ -1,15 +1,16 @@
-use std::{sync::{Mutex, Arc}, thread};
-
-
+use std::{
+    sync::{Arc, Mutex},
+    thread,
+};
 
 #[test]
-fn test_main () {
+fn test_main() {
     let nums = Arc::new(Mutex::new(vec![]));
     let mut childs = vec![];
     for n in 0..5 {
         let ns = nums.clone();
         let t = thread::spawn(move || {
-            let mut ns =  ns.lock().unwrap(); 
+            let mut ns = ns.lock().unwrap();
             ns.push(n);
         });
 
@@ -21,5 +22,4 @@ fn test_main () {
     }
 
     println!("nums: {:?}", nums.lock().unwrap());
-    
 }

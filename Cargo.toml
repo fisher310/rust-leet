@@ -6,7 +6,27 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-maplit = "1.0.1" 
+maplit = "1.0.1"
 serde = "1.0.*"
-serde_derive="1.0.*"
+serde_derive = "1.0.*"
 serde_json = "1.0.*"
+
+
+[[bin]]
+name = "google_geometry"
+path = "google/geometry.rs"
+
+
+[[bin]]
+name = "google_nested_array"
+path = "google/nested_array.rs"
+
+
+[[bin]]
+name = "expression_evaluation"
+path = "google/expression_evaluation.rs"
+
+
+[[bin]]
+name = "elevator"
+path = "google/elevator.rs"

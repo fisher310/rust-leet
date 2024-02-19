@@ -14,6 +14,4 @@ fn test_main() {
 
     hand1.set(Bag { item: Box::new(2) });
     hand2.set(Bag { item: Box::new(3) });
-
-
 }

@@ -1,4 +1,3 @@
-
 struct Solution;
 
 use std::collections::HashMap;
@@ -8,7 +7,7 @@ impl Solution {
         let mut map = HashMap::new();
         for (i, n) in nums.iter().enumerate() {
             if map.contains_key(&(target - n)) {
-                return vec![*map.get(&(target-n)).unwrap(), i as i32]
+                return vec![*map.get(&(target - n)).unwrap(), i as i32];
             }
             map.insert(n, i as i32);
         }

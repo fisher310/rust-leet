@@ -27,14 +27,14 @@ fn helper(nums: &[i32]) -> Option<Rc<RefCell<TreeNode>>> {
 mod tests {
     use super::*;
     #[test]
-    fn test0 () {
-        let res = Solution::sorted_array_to_bst(vec![1,3]);
+    fn test0() {
+        let res = Solution::sorted_array_to_bst(vec![1, 3]);
         println!("{:?}", res)
     }
 
     #[test]
     fn test1() {
-        let res = Solution::sorted_array_to_bst(vec![-10,-3,0,5,9]);
+        let res = Solution::sorted_array_to_bst(vec![-10, -3, 0, 5, 9]);
         println!("{:?}", res);
     }
 }

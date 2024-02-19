@@ -8,7 +8,6 @@ impl Solution {
         let mut fast = &mut dummy as *mut Box<ListNode>;
         let mut slow = &mut dummy as *mut Box<ListNode>;
         unsafe {
-
             for _ in 0..n {
                 fast = (*fast).next.as_mut().unwrap();
             }
@@ -48,8 +47,8 @@ mod tests {
     }
 
     #[test]
-    fn test0 () {
-        let head = create_list(&vec![1,2,3,4,5]);
+    fn test0() {
+        let head = create_list(&vec![1, 2, 3, 4, 5]);
         let head = Solution::remove_nth_from_end(head, 2);
         println!("{:?}", head);
     }

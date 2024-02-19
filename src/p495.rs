@@ -43,9 +43,8 @@ mod tests {
     }
 
     #[test]
-    fn test2 () {
+    fn test2() {
         let ans = Solution::find_poisoned_duration(vec![0, 1], 0);
         assert_eq!(0, ans);
-        
     }
 }

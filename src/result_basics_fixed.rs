@@ -1,4 +1,4 @@
-use std::{fs::File, path::Path, io::Read};
+use std::{fs::File, io::Read, path::Path};
 
 #[test]
 #[should_panic]

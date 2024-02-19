@@ -24,11 +24,10 @@ fn symmetric_helper(p: Option<Rc<RefCell<TreeNode>>>, q: Option<Rc<RefCell<TreeN
                 symmetric_helper(
                     pp.deref().borrow().left.clone(),
                     qq.deref().borrow().right.clone(),
+                ) && symmetric_helper(
+                    pp.deref().borrow().right.clone(),
+                    qq.deref().borrow().left.clone(),
                 )
-                &&
-                symmetric_helper(
-                    pp.deref().borrow().right.clone(), 
-                    qq.deref().borrow().left.clone())
             } else {
                 false
             }
@@ -42,20 +41,44 @@ fn symmetric_helper(p: Option<Rc<RefCell<TreeNode>>>, q: Option<Rc<RefCell<TreeN
 mod tests {
     use super::*;
     #[test]
-    fn test0 () {
-        let res = Solution::is_symmetric(create_tree(&[Some(1), Some(2), Some(2), None, Some(3), None, Some(3)]));
+    fn test0() {
+        let res = Solution::is_symmetric(create_tree(&[
+            Some(1),
+            Some(2),
+            Some(2),
+            None,
+            Some(3),
+            None,
+            Some(3),
+        ]));
         assert_eq!(false, res);
     }
 
     #[test]
     fn test1() {
-        let res = Solution::is_symmetric(create_tree(&[Some(1), Some(2), Some(2), Some(3), Some(4), Some(4), Some(3)]));
+        let res = Solution::is_symmetric(create_tree(&[
+            Some(1),
+            Some(2),
+            Some(2),
+            Some(3),
+            Some(4),
+            Some(4),
+            Some(3),
+        ]));
         assert_eq!(true, res);
     }
 
     #[test]
     fn test2() {
-        let res = Solution::is_symmetric(create_tree(&[Some(2), Some(3), Some(3), Some(4), Some(5), None, Some(4)]));
+        let res = Solution::is_symmetric(create_tree(&[
+            Some(2),
+            Some(3),
+            Some(3),
+            Some(4),
+            Some(5),
+            None,
+            Some(4),
+        ]));
         assert_eq!(false, res);
     }
 }

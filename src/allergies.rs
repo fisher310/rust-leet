@@ -23,7 +23,7 @@ impl Allergies {
         match allergen {
             Allergen::Eggs => {
                 return self.score % 2 == 1;
-            },
+            }
             Allergen::Peanuts => true,
             Allergen::Shellfish => true,
             Allergen::Strawberries => true,

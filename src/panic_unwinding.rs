@@ -1,11 +1,9 @@
 use std::thread;
 
 fn alice() -> thread::JoinHandle<()> {
-    thread::spawn(
-        move || {
-            bob();
-        },
-    )
+    thread::spawn(move || {
+        bob();
+    })
 }
 
 fn bob() {

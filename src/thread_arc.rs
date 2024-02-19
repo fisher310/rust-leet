@@ -1,4 +1,4 @@
-use std::{thread, sync::Arc, time::Duration};
+use std::{sync::Arc, thread, time::Duration};
 
 #[test]
 fn test_main() {

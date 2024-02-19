@@ -47,7 +47,5 @@ mod tests {
         assert_eq!(false, ans);
     }
     #[test]
-    fn test4 () {
-        
-    }
+    fn test4() {}
 }

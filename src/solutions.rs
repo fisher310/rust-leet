@@ -207,7 +207,11 @@ pub fn abbreviate(phrase: &str) -> String {
         .filter(|c| c.is_alphabetic() || c.is_whitespace() || *c == '-')
         .collect();
 
-    let worlds = phrase.split(" ").map(|s| s.trim()).flat_map(|s| s.split('-')).collect::<Vec<&str>>();
+    let worlds = phrase
+        .split(" ")
+        .map(|s| s.trim())
+        .flat_map(|s| s.split('-'))
+        .collect::<Vec<&str>>();
     for word in worlds {
         if word.is_empty() {
             continue;
@@ -308,7 +312,10 @@ mod tests {
 
     #[test]
     fn test_11() {
-        assert_eq!(abbreviate("Complementary metal-oxide semiconductor"), "CMOS");
+        assert_eq!(
+            abbreviate("Complementary metal-oxide semiconductor"),
+            "CMOS"
+        );
         assert_eq!(abbreviate("Ruby on Rails"), "ROR");
         assert_eq!(abbreviate("HyperText Markup Language"), "HTML");
         assert_eq!(abbreviate(""), "");

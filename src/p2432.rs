@@ -35,7 +35,7 @@ mod tests {
     }
     #[test]
     fn test3() {
-        let x = Solution::hardest_worker(2, vec![vec![0,10], vec![1,20]]);
+        let x = Solution::hardest_worker(2, vec![vec![0, 10], vec![1, 20]]);
         assert_eq!(0, x);
     }
 }

@@ -40,14 +40,22 @@ mod tests {
     }
 
     #[test]
-    fn test1 () {
+    fn test1() {
         let res = Solution::is_balanced(create_tree(&[]));
         assert_eq!(true, res);
     }
 
     #[test]
-    fn test2 () {
-        let res = Solution::is_balanced(create_tree(&[Some(3), Some(9), Some(20), None, None, Some(15), Some(7)]));
+    fn test2() {
+        let res = Solution::is_balanced(create_tree(&[
+            Some(3),
+            Some(9),
+            Some(20),
+            None,
+            None,
+            Some(15),
+            Some(7),
+        ]));
         assert_eq!(true, res);
     }
 }

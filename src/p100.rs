@@ -44,7 +44,7 @@ mod tests {
     }
 
     #[test]
-    fn test1 () {
+    fn test1() {
         let p = common::create_tree(&[Some(1), None, Some(3)]);
         let q = common::create_tree(&[Some(1), Some(2), Some(3)]);
         let res = Solution::is_same_tree(p, q);

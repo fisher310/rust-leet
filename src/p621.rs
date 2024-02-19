@@ -20,7 +20,7 @@ impl PartialOrd for Task {
         match other.time.partial_cmp(&self.time) {
             Some(ord) => match ord {
                 std::cmp::Ordering::Equal => self.count.partial_cmp(&other.count),
-                _ => Some(ord)
+                _ => Some(ord),
             },
             None => None,
         }
@@ -102,8 +102,14 @@ mod tests {
     }
 
     #[test]
-    fn test_3 () {
+    fn test_3() {
         //  ["A","A","A","A","A","A","B","C","D","E","F","G"], n = 2
-        assert_eq!(16, Solution::least_interval(vec!['A','A','A','A','A','A','B','C','D','E','F','G'], 2))
+        assert_eq!(
+            16,
+            Solution::least_interval(
+                vec!['A', 'A', 'A', 'A', 'A', 'A', 'B', 'C', 'D', 'E', 'F', 'G'],
+                2
+            )
+        )
     }
 }

@@ -12,13 +12,12 @@ fn test_main() {
     let mut a = Items(20);
 
     // {
-        let ref mut b = a;
-        b.0 += 25;
+    let ref mut b = a;
+    b.0 += 25;
     // }
 
     println!("{:?}", items);
     println!("{:?}", a);
-
 
     let a = "abc";
     let a_ptr = &a;
